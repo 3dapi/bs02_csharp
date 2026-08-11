@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>glc2dcsharp</id>
+    <version>0.1.0.5</version>
+    <authors>HeesungOh</authors>
+    <description>GalicStudio Simple 2D game framework for C#.</description>
+    <license type="expression">MIT</license>
+    <tags>C# graphics 2d glc2d game framework</tags>
+	<readme>source\glc2d\README.md</readme>
+  </metadata>
+
+  <files>
+    <file src="..\glc2d_lib\glc2d\**\*.cs" target="source\glc2d" />
+    <file src="..\glc2d_lib\glc2d\README.md" target="source\glc2d" />
+    <file src="template\GameGlobal.cs" target="source\template" />
+    <file src="template\GameMain.cs" target="source\template" />
+    <file src="template\AppMain.cs" target="source\template" />
+    <file src="build\glc2dcsharp.targets" target="build\glc2dcsharp.targets" />
+  </files>
+</package>

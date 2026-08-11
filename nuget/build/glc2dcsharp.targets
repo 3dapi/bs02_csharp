@@ -1,0 +1,35 @@
+<Project>
+
+  <Target Name="InstallGlc2dSources"
+          BeforeTargets="BeforeBuild">
+
+    <!-- glc2d 프레임워크 소스 -->
+    <ItemGroup Condition="!Exists('$(MSBuildProjectDirectory)\glc2d')">
+      <Glc2dSource
+        Include="$(MSBuildThisFileDirectory)..\source\glc2d\**\*" />
+    </ItemGroup>
+
+    <Copy
+      Condition="'@(Glc2dSource)' != ''"
+      SourceFiles="@(Glc2dSource)"
+      DestinationFiles="@(Glc2dSource->'$(MSBuildProjectDirectory)\glc2d\%(RecursiveDir)%(Filename)%(Extension)')" />
+
+    <!-- 작성용 기본 파일 -->
+    <Copy
+      Condition="!Exists('$(MSBuildProjectDirectory)\GameGlobal.cs')"
+      SourceFiles="$(MSBuildThisFileDirectory)..\source\template\GameGlobal.cs"
+      DestinationFolder="$(MSBuildProjectDirectory)" />
+
+    <Copy
+      Condition="!Exists('$(MSBuildProjectDirectory)\GameMain.cs')"
+      SourceFiles="$(MSBuildThisFileDirectory)..\source\template\GameMain.cs"
+      DestinationFolder="$(MSBuildProjectDirectory)" />
+
+    <Copy
+      Condition="!Exists('$(MSBuildProjectDirectory)\AppMain.cs')"
+      SourceFiles="$(MSBuildThisFileDirectory)..\source\template\AppMain.cs"
+      DestinationFolder="$(MSBuildProjectDirectory)" />
+
+  </Target>
+
+</Project>

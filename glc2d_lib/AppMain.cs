@@ -2,8 +2,12 @@
 // Author: 3dapi (https://github.com/3dapi)
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-internal static class Program
+//#define ACTIVE_GLC2DLIB
+
+internal static class AppMain
 {
+#if ACTIVE_GLC2DLIB
+
 	[STAThread]
 	private static void Main()
 	{
@@ -12,4 +16,5 @@ internal static class Program
 		using GameMain app = new();
 		app.Run();
 	}
+#endif
 }

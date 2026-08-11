@@ -14,6 +14,7 @@
 - **Vortice.DirectWrite**: 문자열 출력에 사용하며 `Vortice.Direct2D1`의 의존 패키지로 함께 설치됩니다.
 - **Vortice.WIC**: PNG, JPG 등의 이미지 파일 로드에 사용하며 `Vortice.Direct2D1`의 의존 패키지로 함께 설치됩니다.
 - **Vortice.WinForms**: WinForms 기반 RenderForm과 RenderLoop 사용
+  - 주의: 윈도우 애플리케이션 설정으로 변경해야 설치가 됩니다.
 - **Vortice.XAudio2**: WAV/MP3 사운드 출력
 - **Vortice.XInput**: 게임패드 입력 기능 확장을 위해 포함
 - **NAudio**: MP3 파일을 PCM 데이터로 디코딩
@@ -22,11 +23,11 @@
 
 ```xml
 <ItemGroup>
-	<PackageReference Include="NAudio" Version="xxx" />
 	<PackageReference Include="Vortice.Direct2D1" Version="xxx" />
 	<PackageReference Include="Vortice.WinForms" Version="xxx" />
 	<PackageReference Include="Vortice.XAudio2" Version="xxx" />
 	<PackageReference Include="Vortice.XInput" Version="xxx" />
+	<PackageReference Include="NAudio" Version="xxx" />    
 </ItemGroup>
 ```
 

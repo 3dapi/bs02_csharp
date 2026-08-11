@@ -11,10 +11,10 @@ class G2Font : IDisposable
 	private readonly record struct FontKey(
 		string FamilyName,
 		float FontSize,
-		FontWeight Weight,
-		FontStyle Style,
-		TextAlignment TextAlign,
-		ParagraphAlignment ParaAlign);
+		Vortice.DirectWrite.FontWeight Weight,
+		Vortice.DirectWrite.FontStyle Style,
+		Vortice.DirectWrite.TextAlignment TextAlign,
+		Vortice.DirectWrite.ParagraphAlignment ParaAlign);
 
 	private class FontData
 	{
@@ -30,10 +30,10 @@ class G2Font : IDisposable
 
 	public G2Font(string fontFamilyName
 				, float fontSize
-				, FontWeight fontWeight = FontWeight.Heavy
-				, FontStyle fontStyle = FontStyle.Normal
-				, TextAlignment textAlignment = TextAlignment.Leading
-				, ParagraphAlignment paragraphAlignment = ParagraphAlignment.Near)
+				, Vortice.DirectWrite.FontWeight fontWeight = Vortice.DirectWrite.FontWeight.Heavy
+				, Vortice.DirectWrite.FontStyle fontStyle = Vortice.DirectWrite.FontStyle.Normal
+				, Vortice.DirectWrite.TextAlignment textAlignment = Vortice.DirectWrite.TextAlignment.Leading
+				, Vortice.DirectWrite.ParagraphAlignment paragraphAlignment = Vortice.DirectWrite.ParagraphAlignment.Near)
 	{
 		var app = G2AppBase.Instance?? throw new InvalidOperationException("G2Font::G2AppBase instance is not initialized.");
 
