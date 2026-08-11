@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\glc2d_lib\glc2d\G2AppBase.cs" Link="glc2d\G2AppBase.cs" />
+    <Compile Include="..\..\glc2d_lib\glc2d\G2AudioContext.cs" Link="glc2d\G2AudioContext.cs" />
+    <Compile Include="..\..\glc2d_lib\glc2d\G2AudioMp3.cs" Link="glc2d\G2AudioMp3.cs" />
+    <Compile Include="..\..\glc2d_lib\glc2d\G2AudioSound.cs" Link="glc2d\G2AudioSound.cs" />
+    <Compile Include="..\..\glc2d_lib\glc2d\G2D2DContext.cs" Link="glc2d\G2D2DContext.cs" />
+    <Compile Include="..\..\glc2d_lib\glc2d\G2Font.cs" Link="glc2d\G2Font.cs" />
+    <Compile Include="..\..\glc2d_lib\glc2d\G2InputContext.cs" Link="glc2d\G2InputContext.cs" />
+    <Compile Include="..\..\glc2d_lib\glc2d\G2Texture.cs" Link="glc2d\G2Texture.cs" />	
+    <Compile Include="..\..\glc2d_lib\glc2d\G2TextureLoader.cs" Link="glc2d\G2TextureLoader.cs" />
+  </ItemGroup>
+
+<ItemGroup>
+    <PackageReference Include="NAudio" Version="2.3.0" />
+    <PackageReference Include="Vortice.Direct2D1" Version="3.8.3" />
+    <PackageReference Include="Vortice.WinForms" Version="3.8.3" />
+    <PackageReference Include="Vortice.XAudio2" Version="3.8.3" />
+    <PackageReference Include="Vortice.XInput" Version="3.8.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="resource\**\*">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>
