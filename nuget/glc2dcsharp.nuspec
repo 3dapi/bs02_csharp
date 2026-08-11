@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>glc2dcsharp</id>
-    <version>0.1.0.5</version>
+    <version>0.1.0.6</version>
     <authors>HeesungOh</authors>
     <description>GalicStudio Simple 2D game framework for C#.</description>
     <license type="expression">MIT</license>

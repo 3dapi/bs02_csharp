@@ -17,6 +17,7 @@
     <Compile Include="..\..\glc2d_lib\glc2d\G2InputContext.cs" Link="glc2d\G2InputContext.cs" />
     <Compile Include="..\..\glc2d_lib\glc2d\G2Texture.cs" Link="glc2d\G2Texture.cs" />	
     <Compile Include="..\..\glc2d_lib\glc2d\G2TextureLoader.cs" Link="glc2d\G2TextureLoader.cs" />
+    <Compile Include="..\..\glc2d_lib\glc2d\G2Util.cs" Link="glc2d\G2Util.cs" />	
   </ItemGroup>
 
 <ItemGroup>
