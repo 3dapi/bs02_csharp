@@ -10,7 +10,7 @@ class G2AudioMp3 : IDisposable
 	private class Mp3Data
 	{
 		public Vortice.Multimedia.WaveFormat Format = null!;
-		public AudioBuffer Buffer = null!;
+		public Vortice.XAudio2.AudioBuffer Buffer = null!;
 		public int Count;
 	}
 	private static readonly Dictionary<string, Mp3Data> SoundList = new();
@@ -19,7 +19,7 @@ class G2AudioMp3 : IDisposable
 
 	// MP3 파일 데이터와 관련된 필드.
 	private Mp3Data? _mp3Data;
-	private readonly AudioBuffer _playBuffer;
+	private readonly Vortice.XAudio2.AudioBuffer _playBuffer;
 	private readonly IXAudio2SourceVoice _sourceVoice;
 
 	public G2AudioMp3(string filePath)
@@ -62,12 +62,12 @@ class G2AudioMp3 : IDisposable
 			_mp3Data = new Mp3Data
 			{
 				Format = format,
-				Buffer = new AudioBuffer(pcmData),
+				Buffer = new Vortice.XAudio2.AudioBuffer(pcmData),
 				Count = 1
 			};
 			SoundList.Add(FilePath, _mp3Data);
 		}
-		_playBuffer = new AudioBuffer(_mp3Data.Buffer.AudioDataPointer, _mp3Data.Buffer.AudioBytes, _mp3Data.Buffer.Flags);
+		_playBuffer = new Vortice.XAudio2.AudioBuffer(_mp3Data.Buffer.AudioDataPointer, _mp3Data.Buffer.AudioBytes, _mp3Data.Buffer.Flags);
 		_sourceVoice = audio.CreateSourceVoice(_mp3Data.Format);
 	}
 
