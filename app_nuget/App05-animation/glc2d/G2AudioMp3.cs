@@ -4,7 +4,7 @@
 using NAudio.Wave;
 using Vortice.XAudio2;
 
-class G2AudioMp3 : IDisposable
+class G2AudioMp3 : IG2Audio
 {
 	// MP3 파일 데이터를 저장하는 내부 클래스.
 	private class Mp3Data
@@ -71,7 +71,7 @@ class G2AudioMp3 : IDisposable
 		_sourceVoice = audio.CreateSourceVoice(_mp3Data.Format);
 	}
 
-	public void Play(bool isLooping = true)
+	public void Play(bool isLooping = false)
 	{
 		Stop();
 		_playBuffer.LoopCount = isLooping ? (uint)XAudio2.LoopInfinite : 0;

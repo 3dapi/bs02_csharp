@@ -9,16 +9,16 @@ namespace AppGlc
 		private G2Font? _cursorFont;
 		private string _mouseInfoText = string.Empty;
 		private string _cursorText = string.Empty;
-		private G2AudioSound? _soundEffect;
-		private G2AudioMp3? _backgroundMusic;
+		private G2Audio? _soundEffect;
+		private G2Audio? _backgroundMusic;
 		// -------------------------------------------------------------------------------------------------------------------------------------------------------------
 		// -------------------------------------------------------------------------------------------------------------------------------------------------------------
 		public void Initialize()
 		{
 			_systemFont = new G2Font("Arial", 32);
 			_cursorFont = new G2Font("Arial", 18);
-			_soundEffect = new G2AudioSound("resource/audio/effect/move3.wav");
-			_backgroundMusic = new G2AudioMp3("resource/audio/bgm/background.mp3");
+			_soundEffect = new G2Audio("resource/audio/effect/move3.wav");
+			_backgroundMusic = new G2Audio("resource/audio/bgm/background.mp3");
 			_backgroundMusic.Play(true);
 		}
 		public void Update()

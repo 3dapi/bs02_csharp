@@ -5,7 +5,7 @@
 using Vortice.Multimedia;
 using Vortice.XAudio2;
 
-class G2AudioSound : IDisposable
+class G2AudioSound : IG2Audio
 {
 	// WAV 파일 데이터를 저장하는 내부 클래스.
 	private class WavData

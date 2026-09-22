@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <Compile Include="..\..\glc2d_lib\glc2d\G2AppBase.cs" Link="glc2d\G2AppBase.cs" />
+    <Compile Include="..\..\glc2d_lib\glc2d\G2Audio.cs" Link="glc2d\G2Audio.cs" />
     <Compile Include="..\..\glc2d_lib\glc2d\G2AudioContext.cs" Link="glc2d\G2AudioContext.cs" />
     <Compile Include="..\..\glc2d_lib\glc2d\G2AudioMp3.cs" Link="glc2d\G2AudioMp3.cs" />
     <Compile Include="..\..\glc2d_lib\glc2d\G2AudioSound.cs" Link="glc2d\G2AudioSound.cs" />
