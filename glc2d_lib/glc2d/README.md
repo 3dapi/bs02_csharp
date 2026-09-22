@@ -49,6 +49,7 @@ GameApp
 │  ├─ G2Font.cs
 │  ├─ G2Texture.cs
 │  ├─ G2TextureLoader.cs
+│  ├─ G2Audio.cs
 │  ├─ G2AudioContext.cs
 │  ├─ G2AudioSound.cs
 │  └─ G2AudioMp3.cs
@@ -606,19 +607,18 @@ _texture?.Draw(
 
 ---
 
-## 12. WAV 효과음
+## 12. WAV, Mp3 Audio
 
-짧은 효과음은 `G2AudioSound`를 사용합니다.
+Audio 는 `G2Audio`를 사용합니다.
 
 ### 생성
 
 ```csharp
-private G2AudioSound? _soundEffect;
+private G2Audio? _soundEffect;
 ```
 
 ```csharp
-_soundEffect = new G2AudioSound(
-    "resource/audio/effect/move3.wav");
+_soundEffect = new G2Audio("resource/audio/effect/move3.wav");
 ```
 
 ### 재생
@@ -666,17 +666,16 @@ if (input.IsButtonDown(MouseButtons.Left))
 
 ---
 
-## 13. MP3 배경 음악
+### MP3 배경 음악
 
 ```csharp
-private G2AudioMp3? _backgroundMusic;
+private G2Audio? _backgroundMusic;
 ```
 
 `Initialize()`에서 생성합니다.
 
 ```csharp
-_backgroundMusic = new G2AudioMp3(
-    "resource/audio/bgm/background.mp3");
+_backgroundMusic = new G2Audio("resource/audio/bgm/background.mp3");
 ```
 
 배경 음악 반복 재생:
@@ -685,15 +684,11 @@ _backgroundMusic = new G2AudioMp3(
 _backgroundMusic.Play(true);
 ```
 
-`G2AudioMp3.Play()`의 기본값은 반복 재생입니다.
-
-```csharp
-_backgroundMusic.Play();
-```
-
 1회 재생:
 
 ```csharp
+_backgroundMusic.Play();
+또는
 _backgroundMusic.Play(false);
 ```
 
@@ -711,11 +706,11 @@ if (_backgroundMusic.IsPlaying())
 }
 ```
 
-현재 `G2AudioMp3`는 MP3 전체를 PCM 데이터로 디코딩한 뒤 메모리에 보관하고 XAudio2로 재생합니다.
+현재 MP3는 내부에서 `G2AudioMp3`를 사용하고, MP3 전체를 PCM 데이터로 디코딩한 뒤 메모리에 보관하고 XAudio2로 재생합니다. 따라서 메모리 사용량이 높습니다.
 
 ---
 
-## 14. 사운드 리소스 해제
+## 14. 오디오 리소스 해제
 
 Scene에서 만든 Sound와 Music은 Scene이 종료될 때 해제합니다.
 
